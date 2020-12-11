@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap");
+
+/*Custom way of for easy color change.*/
+:root {
+	--line-border-fill: #3498db;
+	--line-border-empty: #e0e0e0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/*Everything is Centered.*/
+body {
+	font-family: Open Sans Condensed, sans-serif;
+	margin: 0;
+	overflow: hidden;
+	height: 100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+body {
+	background-color: #fdfff2;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Cellipse fill='none' stroke-width='125.3' id='a' rx='600' ry='450'/%3E%3C/defs%3E%3Cg transform='scale(0.37)' style='transform-origin:center'%3E%3Cg transform='rotate(90 0 0)' style='transform-origin:center'%3E%3Cg style='transform-origin:center'%3E%3Cg transform='translate(1000 750)'%3E%3Cuse stroke='%2327002B' href='%23a' transform=''/%3E%3Cuse stroke='%23340331' href='%23a' transform=''/%3E%3Cuse stroke='%23420436' href='%23a' transform=''/%3E%3Cuse stroke='%2351063b' href='%23a' transform=''/%3E%3Cuse stroke='%235f093f' href='%23a' transform=''/%3E%3Cuse stroke='%236e0d42' href='%23a' transform=''/%3E%3Cuse stroke='%237c1244' href='%23a' transform=''/%3E%3Cuse stroke='%238b1945' href='%23a' transform=''/%3E%3Cuse stroke='%23992045' href='%23a' transform=''/%3E%3Cuse stroke='%23a62945' href='%23a' transform=''/%3E%3Cuse stroke='%23b33244' href='%23a' transform=''/%3E%3Cuse stroke='%23c03c42' href='%23a' transform=''/%3E%3Cuse stroke='%23cb4740' href='%23a' transform=''/%3E%3Cuse stroke='%23d5523c' href='%23a' transform=''/%3E%3Cuse stroke='%23df5f39' href='%23a' transform=''/%3E%3Cuse stroke='%23e76b34' href='%23a' transform=''/%3E%3Cuse stroke='%23ef792f' href='%23a' transform=''/%3E%3Cuse stroke='%23f58729' href='%23a' transform=''/%3E%3Cuse stroke='%23fa9522' href='%23a' transform=''/%3E%3Cuse stroke='%23fda31a' href='%23a' transform=''/%3E%3Cuse stroke='%23ffb210' href='%23a' transform=''/%3E%3Cuse stroke='%23ffc106' href='%23a' transform=''/%3E%3Cuse stroke='%23FFD000' href='%23a' transform=''/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+}
+
+/*Text are centered.*/
+.container {
+	text-align: center;
+}
+
+/*Space in between text and elevation is introduced.*/
+.progress-container {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	margin-bottom: 30px;
+	max-width: 100%;
+	width: 280px;
+}
+
+.progress-container::before {
+	content: "";
+	position: absolute;
+	background-color: var(--line-border-empty);
+	width: 100%;
+	height: 4px;
+
+	transform: translateY(-50%);
+	z-index: -1;
+	top: 50%;
+	left: 0;
+	transition: 0.4s ease;
+}
+
+.progress {
+	background-color: var(--line-border-fill);
+	position: absolute;
+
+	height: 4px;
+	width: 0%;
+	transform: translateY(-50%);
+	z-index: -1;
+	top: 50%;
+	left: 0;
+	transition: 0.4s ease;
+}
+
+.circle {
+	background-color: #fff;
+	color: #999;
+	border-radius: 55%;
+	height: 40px;
+	width: 35px;
+
+	/*1,2,3,4 is brought to center of circle*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 3px solid var(--line-border-empty);
+	transition: 0.4s ease;
+}
+
+.circle.active {
+	border-color: var(--line-border-fill);
+}
+
+.btn {
+	background-color: var(--line-border-fill);
+	color: #fff;
+	border: 0;
+	border-radius: 6px;
+	cursor: pointer;
+	font-family: inherit;
+	padding: 8px 30px;
+	margin: 5px;
+	font-size: 14px;
+}
+
+.btn:active {
+	transform: scale(0.98);
+}
+
+.btn:focus {
+	outline: 0;
+}
+
+.btn:disabled {
+	background-color: var(--line-border-empty);
+	cursor: not-allowed;
+}
